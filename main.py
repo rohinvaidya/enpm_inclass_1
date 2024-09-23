@@ -1,7 +1,4 @@
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-from data import loading_data
+# import the libraries here which you installed
 
 df = loading_data()
 print("First 5 rows of the DataFrame:")
@@ -11,9 +8,10 @@ df_clean = df[['userId', 'completed']]
 task_counts = df_clean.groupby('userId').sum()
 print(df_clean.head())
 
+completed_array = task_counts['completed'].to_numpy()
 # statistics on the data
-mean_completed = task_counts['completed'].mean()
-std_completed = task_counts['completed'].std()
+mean_completed = np.mean(completed_array)
+std_completed = np.std(completed_array)
 
 #plotting number of task completed per user
 plt.figure(figsize=(10,6))
