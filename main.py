@@ -1,4 +1,8 @@
 # import the libraries here which you installed
+import numpy as np
+import pandas  as pd
+import matplotlib.pyplot as plt
+from data import loading_data
 
 df = loading_data()
 print("First 5 rows of the DataFrame:")
